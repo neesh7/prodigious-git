@@ -40,6 +40,9 @@ Git is a distributed version control system that tracks changes in any set of co
 ```bash
   git commit -m " Your commit msg "
   git commit -am " Add and commit at once using -am flag"
+
+  # Amend a commit
+   git commit --amend -m "commit-message"
 ```
 ### Check Logs
 ```bash

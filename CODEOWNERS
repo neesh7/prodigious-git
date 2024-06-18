@@ -1,0 +1,25 @@
+# Specify owners for the entire repository
+* @neesh7
+
+
+
+# # Each line is a pattern followed by one or more owners.
+# # Owners can be GitHub usernames or team names in the form of @org/team.
+
+# # Specify owners for the entire repository.
+# *       @global-owner1 @global-owner2
+
+# # Specify owners for a specific directory.
+# docs/   @docs-owner
+
+# # Specify owners for all files in a directory.
+# src/*   @source-owner
+
+# # Specify owners for a specific file.
+# README.md @doc-owner
+
+# # Specify owners for files with a specific extension.
+# *.js    @js-owner
+
+# # Use wildcard for more complex patterns.
+# config/**/* @config-owner

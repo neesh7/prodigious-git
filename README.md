@@ -13,9 +13,22 @@ Git is a distributed version control system that tracks changes in any set of co
   sudo Install git -y
   git --version
 ```
+
+### Prerequisite to use GIT
+
+```bash
+
+  git config --global user.name "<USER_NAME>"
+  git config --global user.email "<USER_EMAIL>"
+  git config --list
+```
+
 ### Initiallize Repo
 ```bash
   git init
+  git init --initial-branch=main
+  git init -b main
+  git checkout -b main
   git status
 ```
 ### Add to Staging Area (So changes will be tracked)
@@ -27,6 +40,9 @@ Git is a distributed version control system that tracks changes in any set of co
 ```bash
   git commit -m " Your commit msg "
   git commit -am " Add and commit at once using -am flag"
+
+  # Amend a commit
+   git commit --amend -m "commit-message"
 ```
 ### Check Logs
 ```bash
@@ -45,15 +61,56 @@ Git is a distributed version control system that tracks changes in any set of co
   # to get commit count
   git shortlog -sn --all
 ```
+### Check Changes that went in Particular commit 
+```bash
+  # Show a specific commit
+  git show <commit-Hash>
+
+  # Show a specific tag
+  git show <tag-name>
+
+  # Show details of a specific tree 
+  git show <tree-hash>
+
+  # Show a File at specific commit
+  git show <commit-hash>:<path-to-file>
+
+  # Show changes in a merge commit hash
+  git show -m <merge-commit-hash>
+
+  # Show current commit
+  git show head
+
+  # Show Previous commit
+  git show head^
+  git show head^^ or git show HEAD~2
+```
+# History of changes in repo
+
+```bash
+# to see changes in a file line by line
+git blame <file-path>
+
+# Show Changes Between Working Directory and Last Commit
+git diff
+
+# Show Changes Between Two Commits
+git diff <commit-hash-1> <commit-hash-2>
+
+```
 ### Branches
 ```bash
 
-  # List branches
+  # List all remote and local branches
   git branch -a
+
+  # List local branches
   git branch
 
   # create and switch
   git checkout -b <branchname>
+  git checkout -b <new-branch-name> <base-branch-name>
+
 
   # only create branch
   git branch <branchname>
@@ -62,8 +119,12 @@ Git is a distributed version control system that tracks changes in any set of co
   git switch <branchname>
   git checkout <branchname>
 
+  # Rename a branch
+  git branch <old-name-of-branch> <new-name-of-branch>
+
   # Delete branches
   git branch -d <branchname>
+  git branch --delete <branchname>
 ```
 
 ### Merge Branches
@@ -84,6 +145,33 @@ $ git switch master
   git remote add origin <connectionString>
   git remote -v
 ```
+
+### Remote Commands
+```bash
+  # Listing all remote repositories
+  git remote -v
+
+  # Adding, Removing and Updating Remote
+  git remote add <name> <url>
+  git remote add origin <repourl>
+
+  git remote remove <name> 
+  git remote remove origin
+
+  git remote rename <old-name> <new-Nname>
+
+  # Pushes a branch and its commits to the specific remote
+  git push <remote-name> <branch>
+  git push origin main
+
+  # Puuls updates from a remote branch
+  git pull <remote-name> <branch>
+
+  # Fetch Updates without pulling
+  git fetch <remote-name>
+  git fetch origin
+  ```
+
 ### Cloning from remote
 ```bash
   git clone <cloneUrl>

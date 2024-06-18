@@ -45,15 +45,24 @@ Git is a distributed version control system that tracks changes in any set of co
   # to get commit count
   git shortlog -sn --all
 ```
+### Check Changes that went in Particular commit 
+```bash
+  git show <commit-Hash>
+```
+
 ### Branches
 ```bash
 
-  # List branches
+  # List all remote and local branches
   git branch -a
+
+  # List local branches
   git branch
 
   # create and switch
   git checkout -b <branchname>
+  git checkout -b <new-branch-name> <base-branch-name>
+
 
   # only create branch
   git branch <branchname>
@@ -62,8 +71,12 @@ Git is a distributed version control system that tracks changes in any set of co
   git switch <branchname>
   git checkout <branchname>
 
+  # Rename a branch
+  git branch <old-name-of-branch> <new-name-of-branch>
+
   # Delete branches
   git branch -d <branchname>
+  git branch --delete <branchname>
 ```
 
 ### Merge Branches

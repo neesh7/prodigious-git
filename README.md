@@ -120,7 +120,7 @@ git diff <commit-hash-1> <commit-hash-2>
   git checkout <branchname>
 
   # Rename a branch
-  git branch <old-name-of-branch> <new-name-of-branch>
+  git branch -m <old-name-of-branch> <new-name-of-branch>
 
   # Delete branches
   git branch -d <branchname>

@@ -36,6 +36,14 @@ Git is a distributed version control system that tracks changes in any set of co
   git add <filename>
   git add .
 ```
+
+### Unstaging (So changes will be tracked)
+```bash
+  Below command will remove file from staging area
+  git rm --cached <filename>
+  git reset <filename>
+```
+
 ### Commit files from Staging Area
 ```bash
   git commit -m " Your commit msg "
@@ -103,6 +111,10 @@ git diff <commit-hash-1> <commit-hash-2>
 
   # List all remote and local branches
   git branch -a
+  git branch --all
+
+  # List only remote branches
+  git branch -r
 
   # List local branches
   git branch
@@ -125,6 +137,8 @@ git diff <commit-hash-1> <commit-hash-2>
   # Delete branches
   git branch -d <branchname>
   git branch --delete <branchname>
+
+  git push origin --delete <remoteBranchName>
 ```
 
 ### Merge Branches
@@ -138,6 +152,22 @@ $ git switch master
 
 (master)$ git merge dev
 (master)$ git log --oneline
+```
+#### Merge types --> Fast Forward Merge, ort Merge and Squash merge
+
+### Tagging
+```bash
+# 2 types of tags -  Annotated and Lightweight
+Annotated tags are maintained separtely in database while Lightweight tags are just like a pointer to highlight certain changes.
+$ git tag -a "<tagname>" -m " Tag msg"
+$ git tag -a "v1.0" -m "This is version 1"
+
+# to list the tags
+$ git tags
+
+# From here merge you branch to current branch
+
+(master)$ git show v1.0 --> to view a particular tag
 ```
 ## Working with Remote
 ### Adding or Listing Remote
@@ -164,7 +194,7 @@ $ git switch master
   git push <remote-name> <branch>
   git push origin main
 
-  # Puuls updates from a remote branch
+  # Pulls updates from a remote branch
   git pull <remote-name> <branch>
 
   # Fetch Updates without pulling
@@ -181,6 +211,8 @@ $ git switch master
 ```bash
   git push origin <sourcebranchname>
   git push origin dev
+
+  Note: Here 'origin' is a remote name
   ```
 ### Fetch / Pull from Remote
 ```bash
